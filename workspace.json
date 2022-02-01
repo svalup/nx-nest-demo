@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "backend": "apps/backend"
+    "backend": "apps/backend",
+    "data-access": "libs/data-access"
   }
 }
