@@ -3,6 +3,24 @@
   "sourceRoot": "apps/backend/src",
   "projectType": "application",
   "targets": {
+    "typeorm": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "parallel": false,
+        "commands": [
+          {
+            "command": "ts-node -P ./tsconfig.app.json -r tsconfig-paths/register ../../node_modules/typeorm/cli.js --config src/config/database.ts",
+            "forwardAllArgs": true
+          },
+          {
+            "command": "cd ../.. && nx lint backend --fix",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "apps/backend",
+        "colors": true
+      }
+    },
     "build": {
       "executor": "@nrwl/node:build",
       "outputs": ["{options.outputPath}"],

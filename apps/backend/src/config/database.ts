@@ -1,11 +1,13 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm'
+import * as entities from '../database/entities'
 
 const connectionOptions: TypeOrmModuleOptions = {
   type: 'postgres',
   synchronize: false,
   logging: true,
   migrationsRun: false,
-  autoLoadEntities: true,
+  autoLoadEntities: false,
+  entities: Object.values(entities),
   migrations: ['./src/database/migrations/**/*.ts'],
   cli: {
     migrationsDir: './src/database/migrations/'

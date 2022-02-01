@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common'
 import { ApiCreatedResponse, ApiInternalServerErrorResponse, ApiOkResponse } from '@nestjs/swagger'
 import { CreateStudentDto } from './dto/create-student.dto'
-import { Student } from './student.entity'
+import { Student } from '../database/entities/student.entity'
 import { StudentsService } from './students.service'
 
 @Controller('students')
