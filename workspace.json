@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "backend": "apps/backend",
-    "data-access": "libs/data-access"
+    "data-access": "libs/data-access",
+    "ui": "apps/ui",
+    "ui-e2e": "apps/ui-e2e"
   }
 }

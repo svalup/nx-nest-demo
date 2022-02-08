@@ -21,6 +21,37 @@
         "colors": true
       }
     },
+    "docker": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "file": "apps/backend/Dockerfile",
+        "push": false,
+        "load": true,
+        "tags": ["my-org/backend:latest"],
+        "target": "development"
+      },
+      "configurations": {
+        "production": {
+          "target": "production",
+          "tags": ["my-org/backend-prod:latest"]
+        }
+      }
+    },
+    "deploy": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx run backend:build", "nx run backend:docker"],
+        "parallel": false
+      },
+      "configurations": {
+        "production": {
+          "commands": [
+            "nx run backend:build:production",
+            "nx run backend:docker:production"
+          ]
+        }
+      }
+    },
     "build": {
       "executor": "@nrwl/node:build",
       "outputs": ["{options.outputPath}"],
@@ -28,7 +59,9 @@
         "webpackConfig": "apps/backend/webpack.config.js",
         "outputPath": "dist/apps/backend",
         "main": "apps/backend/src/main.ts",
-        "tsConfig": "apps/backend/tsconfig.app.json"
+        "tsConfig": "apps/backend/tsconfig.app.json",
+        "assets": [],
+        "generatePackageJson": true
       },
       "configurations": {
         "production": {
