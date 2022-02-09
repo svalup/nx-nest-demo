@@ -1,5 +1,5 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm'
-import * as entities from '../database/entities'
+import * as entities from '@nx-nest-demo/entities'
 
 const connectionOptions: TypeOrmModuleOptions = {
   type: 'postgres',

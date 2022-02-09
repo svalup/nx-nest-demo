@@ -3,6 +3,8 @@
   "projects": {
     "backend": "apps/backend",
     "data-access": "libs/data-access",
+    "dtos": "libs/dtos",
+    "entities": "libs/entities",
     "ui": "apps/ui",
     "ui-e2e": "apps/ui-e2e"
   }

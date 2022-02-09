@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-nest-demo/data-access": ["libs/data-access/src/index.ts"]
+      "@nx-nest-demo/data-access": ["libs/data-access/src/index.ts"],
+      "@nx-nest-demo/dtos": ["libs/dtos/src/index.ts"],
+      "@nx-nest-demo/entities": ["libs/entities/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
